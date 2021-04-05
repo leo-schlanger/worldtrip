@@ -1,0 +1,78 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true,
+        "jest": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "plugin:prettier/recommended",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "eslint-plugin-import-helpers",
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}],
+        "react/react-in-jsx-scope": "off",
+        "camelcase": "off",
+        "no-undef": "off",
+        "object-curly-newline": "off",
+        "import/no-unresolved": "off",
+        "react/jsx-filename-extension": "off",
+        "react/jsx-props-no-spreading": "off",
+        "@typescript-eslint/naming-convention": [
+        "error",
+        {
+            "selector": "interface",
+            "format": ["PascalCase"],
+            "custom": {
+            "regex": "^I[A-Z]",
+            "match": true
+            }
+        }
+        ],
+        "class-methods-use-this": "off",
+        "import/prefer-default-export": "off",
+        "no-shadow": "off",
+        "no-console": "off",
+        "no-useless-constructor": "off",
+        "no-empty-function": "off",
+        "lines-between-class-members": "off",
+        "import/extensions": "off",
+        // [
+        // "error",
+        // "ignorePackages",
+        // {
+        //     "ts": "never",
+        //     "tsx": "never"
+        // }
+        // ],
+        "import-helpers/order-imports": [
+        "warn",
+        {
+            "newlinesBetween": "always",
+            "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
+            "alphabetize": { "order": "asc", "ignoreCase": true }
+        }
+        ],
+        "import/no-extraneous-dependencies": [
+        "error",
+        { "devDependencies": ["**/*.spec.js"] }
+        ]
+    }
+}
