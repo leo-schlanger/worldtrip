@@ -22,9 +22,9 @@ export function Banner(): JSX.Element {
           maxW="426px"
           color="#F5F8FA"
         >
-          5 Continentes,
+          5 Continents,
           <br />
-          infinitas possibilidades.
+          infinity possibilities.
         </Text>
         <Text
           fontSize={['0.5rem', '0.75rem', '1.25rem']}
@@ -34,7 +34,8 @@ export function Banner(): JSX.Element {
           maxW="524px"
           color="#F5F8FA"
         >
-          Chegou a hora de tirar do papel a viagem que você sempre sonhou.
+          The time has come to take the journey you&apos;ve always dreamed of
+          out of paper.
         </Text>
       </Flex>
       <Img

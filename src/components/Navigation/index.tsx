@@ -11,11 +11,11 @@ export function Navigation(): JSX.Element {
       w="100vw"
       p="24"
     >
-      <NavLink imgUrl="/assets/navigation/cocktail.svg">vida noturna</NavLink>
-      <NavLink imgUrl="/assets/navigation/surf.svg">praia</NavLink>
-      <NavLink imgUrl="/assets/navigation/building.svg">moderno</NavLink>
-      <NavLink imgUrl="/assets/navigation/museum.svg">clássico</NavLink>
-      <NavLink imgUrl="/assets/navigation/earth.svg">e mais...</NavLink>
+      <NavLink imgUrl="/assets/navigation/cocktail.svg">night life</NavLink>
+      <NavLink imgUrl="/assets/navigation/surf.svg">beach</NavLink>
+      <NavLink imgUrl="/assets/navigation/building.svg">modern</NavLink>
+      <NavLink imgUrl="/assets/navigation/museum.svg">classic</NavLink>
+      <NavLink imgUrl="/assets/navigation/earth.svg">and more...</NavLink>
     </SimpleGrid>
   );
 }

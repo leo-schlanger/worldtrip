@@ -2,18 +2,20 @@ import { Flex, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
 interface ICarouselItemProps {
+  id: string;
+  name: string;
   title: string;
-  // description: string;
   background: string;
 }
 
 export default function CarouselItem({
+  id,
+  name,
   title,
-  // description,
   background,
 }: ICarouselItemProps): JSX.Element {
   return (
-    <Link href="/">
+    <Link href={`continent/${id}`}>
       <Flex
         backgroundImage={`url(${background})`}
         backgroundRepeat="no-repeat"
@@ -25,11 +27,11 @@ export default function CarouselItem({
       >
         <Flex justifyContent="center" alignItems="center" w="100%">
           <Text fontWeight="600" fontSize={['24px', '48px']} color="white">
+            {name}
+          </Text>
+          <Text fontWeight="500" fontSize={['14px', '24px']} color="white">
             {title}
           </Text>
-          {/* <Text fontWeight="500" fontSize={['14px', '24px']} color="white">
-            {description}
-          </Text> */}
         </Flex>
       </Flex>
     </Link>

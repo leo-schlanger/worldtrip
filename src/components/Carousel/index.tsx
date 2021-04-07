@@ -6,7 +6,18 @@ import CarouselItem from './CarouselItem';
 
 SwiperCore.use([Navigation, Pagination]);
 
-export function Carousel(): JSX.Element {
+interface IContinent {
+  id: string;
+  name: string;
+  title: string;
+  background: string;
+}
+
+interface ICarouselProps {
+  continents: IContinent[];
+}
+
+export function Carousel({ continents }: ICarouselProps): JSX.Element {
   return (
     <Flex w="90%" justifyContent="center" alignItems="center" mb="8">
       <Swiper
@@ -19,41 +30,16 @@ export function Carousel(): JSX.Element {
         autoplay
         initialSlide={0}
       >
-        <SwiperSlide>
-          <CarouselItem
-            title="Europa"
-            // description="O continente mais antigo"
-            background="/images/europe.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CarouselItem
-            title="África"
-            // description=""
-            background="/images/africa.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CarouselItem
-            title="Américas"
-            // description=""
-            background="/images/americas.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CarouselItem
-            title="Asia"
-            // description=""
-            background="/images/asia.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CarouselItem
-            title="Oceania"
-            // description=""
-            background="/images/oceania.jpg"
-          />
-        </SwiperSlide>
+        {continents.map((continent) => (
+          <SwiperSlide key={`slide-${continent.id}`}>
+            <CarouselItem
+              id={continent.id}
+              name={continent.name}
+              title={continent.title}
+              background={continent.background}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Flex>
   );
